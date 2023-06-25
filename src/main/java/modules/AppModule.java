@@ -9,7 +9,7 @@ import org.RentalAgreement.tools.ToolManager;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ToolModule extends AbstractModule {
+public class AppModule extends AbstractModule {
 
     @Override
     protected void configure() {

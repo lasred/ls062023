@@ -2,7 +2,7 @@ package org.RentalAgreement;
 import lombok.*;
 import com.google.inject.Injector;
 import com.google.inject.Guice;
-import modules.ToolModule;
+import modules.AppModule;
 import org.RentalAgreement.tools.Tool;
 import org.RentalAgreement.tools.ToolManager;
 
@@ -17,7 +17,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Injector injector = Guice.createInjector(new ToolModule());
+        Injector injector = Guice.createInjector(new AppModule());
         ToolManager toolManager = injector.getInstance(ToolManager.class);
         Tool tool = toolManager.getTool("HNS");
         //Scanner that reads in data
