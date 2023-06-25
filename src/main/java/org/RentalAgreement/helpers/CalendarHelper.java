@@ -1,4 +1,4 @@
-package org.RentalAgreement;
+package org.RentalAgreement.helpers;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

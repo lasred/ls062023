@@ -1,4 +1,4 @@
-package org.RentalAgreement;
+package org.RentalAgreement.tools;
 
 import java.math.BigDecimal;
 import lombok.Getter;

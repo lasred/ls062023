@@ -1,7 +1,8 @@
-package org.RentalAgreement;
+package org.RentalAgreement.rental;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.RentalAgreement.tools.Tool;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

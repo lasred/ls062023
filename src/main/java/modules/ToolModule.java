@@ -2,9 +2,9 @@ package modules;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.name.Named;
-import org.RentalAgreement.Tool;
-import org.RentalAgreement.ToolChargeInfo;
-import org.RentalAgreement.ToolManager;
+import org.RentalAgreement.tools.Tool;
+import org.RentalAgreement.tools.ToolChargeInfo;
+import org.RentalAgreement.tools.ToolManager;
 
 import java.util.HashMap;
 import java.util.Map;

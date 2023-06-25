@@ -3,14 +3,14 @@ import lombok.*;
 import com.google.inject.Injector;
 import com.google.inject.Guice;
 import modules.ToolModule;
+import org.RentalAgreement.tools.Tool;
+import org.RentalAgreement.tools.ToolManager;
 
 public class Main {
     /**
      * Finish business logic
      * Add tests
      * Lombok
-     *
-     *
      *
      * @param args
      */

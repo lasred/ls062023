@@ -1,9 +1,9 @@
-package org.RentalAgreement;
+package org.RentalAgreement.tools;
 
-import java.math.BigDecimal;
 import lombok.Getter;
 
 import lombok.AllArgsConstructor;
+import org.RentalAgreement.tools.ToolChargeInfo;
 
 @AllArgsConstructor
 public class Tool {

@@ -1,6 +1,5 @@
-package org.RentalAgreement;
+package org.RentalAgreement.tools;
 
-import java.math.BigDecimal;
 import java.util.Map;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
@@ -15,11 +14,12 @@ public class ToolManager {
     public ToolManager(@Named("ToolConfiguration") Map<String, Tool> toolCodeToToolMap) {
        this.toolCodeToToolMap = toolCodeToToolMap;
     }
+
     /**
      * Retrieve a tool based on the code
      *
-     * @param toolCode
-     * @return
+     * @param toolCode the tool code
+     * @return Tool associated with the cod e
      */
     public Tool getTool(String toolCode) {
         if (!toolCodeToToolMap.containsKey(toolCode)) {

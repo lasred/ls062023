@@ -1,4 +1,9 @@
-package org.RentalAgreement;
+package org.RentalAgreement.helpers;
+
+import org.RentalAgreement.tools.Tool;
+import org.RentalAgreement.tools.ToolChargeInfo;
+import org.RentalAgreement.tools.ToolManager;
+import org.RentalAgreement.rental.RentalAgreement;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
