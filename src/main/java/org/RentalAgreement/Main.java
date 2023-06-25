@@ -1,4 +1,4 @@
-package org.example;
+package org.RentalAgreement;
 import lombok.*;
 public class Main {
     /**
@@ -11,6 +11,9 @@ public class Main {
      * @param args
      */
     //Rename to checkout?
+
+
+
     public static void main(String[] args) {
 
         //Scanner that reads in data

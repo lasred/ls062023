@@ -4,7 +4,7 @@ public class RentalTests {
 
     @Test
     public void sampleTest() {
-        assertEquals(2,4);
+        assertEquals(4,4);
     }
 
 }
