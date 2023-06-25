@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class Tool {
+
+    @Getter
     private String brand;
 
     @Getter

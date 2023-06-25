@@ -2,22 +2,19 @@ package org.RentalAgreement;
 
 import java.math.BigDecimal;
 import java.util.Map;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
+
 
 public class ToolManager {
 
-    //code
-    //for O(1) lookup by access code (if many tools)
-    //DI this-
-    private Map<String, Tool> toolCodeToToolMap = initializeToolCodetoToolMap();
+    private Map<String, Tool> toolCodeToToolMap;
 
-    private static Map<String, String> toolMap;
-    //Where to initialize existing tools? - static map
 
-    private Map<String, Tool> initializeToolCodetoToolMap() {
-
-        return null;
+    @Inject
+    public ToolManager(@Named("ToolConfiguration") Map<String, Tool> toolCodeToToolMap) {
+       this.toolCodeToToolMap = toolCodeToToolMap;
     }
-
     /**
      * Retrieve a tool based on the code
      *
