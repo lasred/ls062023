@@ -10,8 +10,6 @@ public class ToolManager {
     //DI this-
     private Map<String, Tool> toolCodeToToolMap = initializeToolCodetoToolMap();
 
-
-
     private static Map<String, String> toolMap;
     //Where to initialize existing tools? - static map
 

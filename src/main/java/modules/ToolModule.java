@@ -1,8 +1,10 @@
 package modules;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
+import com.google.inject.name.Named;
 import org.RentalAgreement.Tool;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ToolModule extends AbstractModule {
@@ -12,7 +14,11 @@ public class ToolModule extends AbstractModule {
     }
 
     @Provides
+    @Named("ToolConfiguration")
     public Map<String, Tool> getToolConfiguration() {
-       return null;
+       Map<String, Tool> toolConfig = new HashMap<String, Tool>();
+
+
+        return toolConfig;
     }
 }

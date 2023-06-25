@@ -31,9 +31,10 @@ public class RentalManager {
         }
 
         Tool tool = toolManager.getTool(toolCode);
+        ToolChargeInfo toolChargeInfo = tool.getToolChargeInfo();
 
         int chargeDays = getChargeDays(tool, checkoutDate, rentalDayCount);
-        BigDecimal costBeforeDiscount = tool.getDailyCharge().multiply(new BigDecimal(chargeDays));
+        BigDecimal costBeforeDiscount = toolChargeInfo.getDailyCharge().multiply(new BigDecimal(chargeDays));
 
         BigDecimal discountP = new BigDecimal(discountPercentage/100.0);
         BigDecimal discount = costBeforeDiscount.multiply(discountP);
@@ -64,14 +65,14 @@ public class RentalManager {
 
             LocalDate toEvaluate = checkoutDate.plusDays(i);
 
-            if(shouldCharge(tool, toEvaluate)) {
+            if(shouldCharge(tool.getToolChargeInfo(), toEvaluate)) {
                 chargeDays ++;
             }
         }
         return chargeDays;
     }
 
-    private boolean shouldCharge(Tool tool, LocalDate date) {
+    private boolean shouldCharge(ToolChargeInfo tool, LocalDate date) {
 
         //if holiday -> should override weekday charge
         if(calendarHelper.isHoliday(date) && !tool.isHolidayCharged()) {
