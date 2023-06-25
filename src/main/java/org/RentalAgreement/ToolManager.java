@@ -7,16 +7,9 @@ public class ToolManager {
 
     //code
     //for O(1) lookup by access code (if many tools)
+    //DI this-
     private Map<String, Tool> toolCodeToToolMap = initializeToolCodetoToolMap();
 
-    class Tool {
-        //ChargeType
-        String brand;
-        BigDecimal dailyCharge;
-        boolean weekendCharge;
-        boolean holidayCharge;
-        boolean weekdayCharge;
-    }
 
 
     private static Map<String, String> toolMap;
@@ -27,6 +20,12 @@ public class ToolManager {
         return null;
     }
 
+    /**
+     * Retrieve a tool based on the code
+     *
+     * @param toolCode
+     * @return
+     */
     public Tool getTool(String toolCode) {
         if (!toolCodeToToolMap.containsKey(toolCode)) {
             throw new IllegalArgumentException("Invalid tool code");

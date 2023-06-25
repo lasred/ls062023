@@ -2,7 +2,6 @@ package org.RentalAgreement;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import org.RentalAgreement.ToolManager.Tool;
 
 public class RentalManager {
 
@@ -34,10 +33,10 @@ public class RentalManager {
         Tool tool = toolManager.getTool(toolCode);
 
         int chargeDays = getChargeDays(tool, checkoutDate, rentalDayCount);
-        BigDecimal costBeforeDiscount = tool.dailyCharge.multiply(new BigDecimal(chargeDays));
+        BigDecimal costBeforeDiscount = tool.getDailyCharge().multiply(new BigDecimal(chargeDays));
 
         BigDecimal discountP = new BigDecimal(discountPercentage/100.0);
-        BigDecimal discount = tool.dailyCharge.multiply(discountP);
+        BigDecimal discount = costBeforeDiscount.multiply(discountP);
         //might need to add 1 here
         LocalDate dueDate = checkoutDate.plusDays(rentalDayCount);
 
@@ -75,15 +74,15 @@ public class RentalManager {
     private boolean shouldCharge(Tool tool, LocalDate date) {
 
         //if holiday -> should override weekday charge
-        if(calendarHelper.isHoliday(date) && !tool.holidayCharge) {
+        if(calendarHelper.isHoliday(date) && !tool.isHolidayCharged()) {
             return false;
         }
 
-        if(calendarHelper.isWeekend(date) && !tool.weekendCharge) {
+        if(calendarHelper.isWeekend(date) && !tool.isWeekendCharged()) {
             return false;
         }
 
-        if(calendarHelper.isWeekend(date) && tool.weekdayCharge) {
+        if(calendarHelper.isWeekend(date) && tool.isWeekdayCharged()) {
             return false;
         }
 
