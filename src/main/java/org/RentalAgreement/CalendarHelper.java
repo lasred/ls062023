@@ -6,6 +6,7 @@ import java.time.LocalDate;
 //tests for these classes
 public class CalendarHelper {
 
+    //TODO - add tests for these
     public boolean isWeekend(LocalDate localDate) {
         return localDate.getDayOfWeek() == DayOfWeek.SATURDAY ||
                 localDate.getDayOfWeek() == DayOfWeek.SUNDAY;

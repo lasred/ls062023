@@ -10,8 +10,6 @@ public class Main {
      *
      * @param args
      */
-    //Rename to checkout?
-
 
 
     public static void main(String[] args) {
