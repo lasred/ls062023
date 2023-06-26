@@ -5,6 +5,7 @@ import lombok.Getter;
 import org.ToolRentApp.tools.Tool;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 import org.apache.commons.text.TextStringBuilder;
@@ -38,13 +39,13 @@ public class RentalAgreement {
         stringBuilder.appendln("Tool Brand: " + tool.getBrand());
         stringBuilder.appendln("Rental Days: " + rentalDayCount);
         stringBuilder.appendln("Checkout Day: " + checkoutDate);
-        stringBuilder.appendln("Due Date" + dueDate);
-        stringBuilder.appendln("Daily Rental Charge: " + tool.getToolChargeInfo().getDailyCharge());
+        stringBuilder.appendln("Due Date: " + dueDate);
+        stringBuilder.appendln("Daily Rental Charge: $" + tool.getToolChargeInfo().getDailyCharge().setScale(2, RoundingMode.HALF_EVEN));
         stringBuilder.appendln("Charge Days: "  + chargeDays);
         stringBuilder.appendln("Pre discount charge: " + costBeforeDiscount);
         stringBuilder.appendln("Discount percent: " + discountPercentage + "%");
-        stringBuilder.appendln("Discount amount: " + discount);
-        stringBuilder.appendln("Final charge: " + finalCharge);
+        stringBuilder.appendln("Discount amount: $" + discount);
+        stringBuilder.appendln("Final charge: $" + finalCharge);
 
        return stringBuilder.toString();
     }

@@ -6,6 +6,7 @@ import org.ToolRentApp.tools.ToolManager;
 import org.ToolRentApp.rental.RentalAgreement;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 /**
@@ -21,9 +22,11 @@ public class RentalManager {
      * RentalManager - handles/services request to rent tools
      *
      * @param toolManager the tool manager
+     * @param calendarHelper the calendar helper
      */
-    public RentalManager(ToolManager toolManager) {
+    public RentalManager(ToolManager toolManager, CalendarHelper calendarHelper) {
         this.toolManager = toolManager;
+        this.calendarHelper = calendarHelper;
     }
 
     /**
@@ -48,14 +51,14 @@ public class RentalManager {
         ToolChargeInfo toolChargeInfo = tool.getToolChargeInfo();
 
         int chargeDays = getChargeDays(tool, checkoutDate, rentalDayCount);
-        BigDecimal costBeforeDiscount = toolChargeInfo.getDailyCharge().multiply(new BigDecimal(chargeDays));
+        BigDecimal costBeforeDiscount = toolChargeInfo.getDailyCharge().multiply(new BigDecimal(chargeDays)).setScale(2, RoundingMode.HALF_EVEN);
 
         BigDecimal discountP = new BigDecimal(discountPercentage/100.0);
-        BigDecimal discount = costBeforeDiscount.multiply(discountP);
+        BigDecimal discount = costBeforeDiscount.multiply(discountP).setScale(2, RoundingMode.HALF_EVEN);
 
         LocalDate dueDate = checkoutDate.plusDays(rentalDayCount);
 
-        BigDecimal finalCharge = costBeforeDiscount.subtract(discount);
+        BigDecimal finalCharge = costBeforeDiscount.subtract(discount).setScale(2, RoundingMode.HALF_EVEN);
 
         RentalAgreement rentalAgreement = new RentalAgreement(toolCode, tool, rentalDayCount, checkoutDate, dueDate, chargeDays,
                 costBeforeDiscount, discountPercentage, discount, finalCharge);

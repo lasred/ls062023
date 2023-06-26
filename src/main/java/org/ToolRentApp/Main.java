@@ -2,29 +2,42 @@ package org.ToolRentApp;
 import com.google.inject.Injector;
 import com.google.inject.Guice;
 import modules.AppModule;
+import org.ToolRentApp.helpers.RentalManager;
+import org.ToolRentApp.rental.RentalAgreement;
 import org.ToolRentApp.tools.Tool;
 import org.ToolRentApp.tools.ToolManager;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
 public class Main {
-    /**
-     * Finish business logic
-     * Add tests
-     * Lombok
-     *
-     * @param args
-     */
+
 
 
     public static void main(String[] args) {
         Injector injector = Guice.createInjector(new AppModule());
-        ToolManager toolManager = injector.getInstance(ToolManager.class);
-        Tool tool = toolManager.getTool("HNS");
-        //Scanner that reads in data
-        //From data generate a Rental agreement
-        System.out.println(tool.getBrand());
-        System.out.println("additional");
-        System.out.println(tool.getToolChargeInfo().toString());
+        RentalManager rentalManager = injector.getInstance(RentalManager.class);
 
-        //RentalAgreement agreement = new RentalAgreement();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the tool code:");
+        String toolCode = scan.nextLine();
+
+        System.out.println("Enter a rental date in format of MM-dd-yyyy:");
+        String rentalDateAsString = scan.nextLine();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        LocalDate rentalDate = LocalDate.parse(rentalDateAsString, dtf);
+
+        System.out.println("Enter the number of days to rent tool:");
+        int rentalDays = scan.nextInt();
+
+        System.out.println("Enter the discount percentage as a whole number:");
+        int discountPercentage = scan.nextInt();
+
+
+        RentalAgreement agreement = rentalManager.rentTool(toolCode, discountPercentage, rentalDate, rentalDays);
+        System.out.println(agreement);
+
+
     }
 }
