@@ -1,4 +1,4 @@
-package org.RentalAgreement.tools;
+package org.ToolRentApp.tools;
 
 import java.util.Map;
 import com.google.inject.Inject;
@@ -19,7 +19,7 @@ public class ToolManager {
      * Retrieve a tool based on the code
      *
      * @param toolCode the tool code
-     * @return Tool associated with the cod e
+     * @return Tool associated with the code
      */
     public Tool getTool(String toolCode) {
         if (!toolCodeToToolMap.containsKey(toolCode)) {

@@ -1,10 +1,9 @@
-package org.RentalAgreement;
-import lombok.*;
+package org.ToolRentApp;
 import com.google.inject.Injector;
 import com.google.inject.Guice;
 import modules.AppModule;
-import org.RentalAgreement.tools.Tool;
-import org.RentalAgreement.tools.ToolManager;
+import org.ToolRentApp.tools.Tool;
+import org.ToolRentApp.tools.ToolManager;
 
 public class Main {
     /**

@@ -1,11 +1,15 @@
-package org.RentalAgreement.rental;
+package org.ToolRentApp.rental;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.RentalAgreement.tools.Tool;
+import org.ToolRentApp.tools.Tool;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
+import org.apache.commons.lang3.text.StrBuilder;
+
+
 @AllArgsConstructor
 public class RentalAgreement {
 
@@ -17,8 +21,15 @@ public class RentalAgreement {
     private BigDecimal costBeforeDiscount;
     private int discountPercentage;
     private BigDecimal discount;
+
+    @Getter
     private BigDecimal finalCharge;
 
+    /**
+     * Generate string representation of RentalAgreement
+     *
+     * @return rental agreement
+     */
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         //update this

@@ -1,9 +1,8 @@
-package org.RentalAgreement.tools;
+package org.ToolRentApp.tools;
 
 import lombok.Getter;
 
 import lombok.AllArgsConstructor;
-import org.RentalAgreement.tools.ToolChargeInfo;
 
 @AllArgsConstructor
 public class Tool {

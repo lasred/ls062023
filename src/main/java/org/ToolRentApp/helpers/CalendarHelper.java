@@ -1,4 +1,4 @@
-package org.RentalAgreement.helpers;
+package org.ToolRentApp.helpers;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -8,15 +8,31 @@ import java.time.temporal.TemporalAdjusters;
 
 public class CalendarHelper {
 
+    /**
+     * Return if the specified date falls on the weekend
+     * @param localDate the specified date
+     * @return specified date is on the weekend
+     */
     public boolean isWeekend(LocalDate localDate) {
         return localDate.getDayOfWeek() == DayOfWeek.SATURDAY ||
                 localDate.getDayOfWeek() == DayOfWeek.SUNDAY;
     }
 
+    /**
+     * Return if the specified date is a weekday
+     * @param localDate the specified date
+     * @return specified date is a weekday
+     */
     public boolean isWeekday(LocalDate localDate) {
         return !isWeekend(localDate);
     }
 
+
+    /**
+     * Return if the specified date is a date where a holiday is observed(current holidays are labor day and independence day)
+     * @param localDate the specified date
+     * @return specified date is a date where a holiday is observed
+     */
     public boolean isHoliday(LocalDate localDate) {
 
         return isLaborDay(localDate) || isIndependeceDayObserved(localDate);
