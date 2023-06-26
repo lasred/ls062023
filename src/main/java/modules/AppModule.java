@@ -3,7 +3,7 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 import com.google.inject.name.Named;
 import org.ToolRentApp.helpers.CalendarHelper;
-import org.ToolRentApp.helpers.RentalManager;
+import org.ToolRentApp.rental.RentalManager;
 import org.ToolRentApp.tools.Tool;
 import org.ToolRentApp.tools.ToolChargeInfo;
 import org.ToolRentApp.tools.ToolManager;

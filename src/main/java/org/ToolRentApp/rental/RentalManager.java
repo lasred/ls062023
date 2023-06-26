@@ -1,5 +1,6 @@
-package org.ToolRentApp.helpers;
+package org.ToolRentApp.rental;
 
+import org.ToolRentApp.helpers.CalendarHelper;
 import org.ToolRentApp.tools.Tool;
 import org.ToolRentApp.tools.ToolChargeInfo;
 import org.ToolRentApp.tools.ToolManager;

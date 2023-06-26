@@ -1,8 +1,7 @@
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import modules.AppModule;
-import org.ToolRentApp.helpers.CalendarHelper;
-import org.ToolRentApp.helpers.RentalManager;
+import org.ToolRentApp.rental.RentalManager;
 import org.ToolRentApp.rental.RentalAgreement;
 import org.ToolRentApp.tools.Tool;
 import org.ToolRentApp.tools.ToolChargeInfo;

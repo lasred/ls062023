@@ -2,10 +2,8 @@ package org.ToolRentApp;
 import com.google.inject.Injector;
 import com.google.inject.Guice;
 import modules.AppModule;
-import org.ToolRentApp.helpers.RentalManager;
+import org.ToolRentApp.rental.RentalManager;
 import org.ToolRentApp.rental.RentalAgreement;
-import org.ToolRentApp.tools.Tool;
-import org.ToolRentApp.tools.ToolManager;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
