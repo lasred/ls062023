@@ -22,8 +22,8 @@ public class AppModule extends AbstractModule {
     public Map<String, Tool> getToolConfiguration() {
        Map<String, Tool> toolConfig = new HashMap<String, Tool>();
 
-       toolConfig.put("HNS", new Tool("Stihl", ToolChargeInfo.CHAINSAW));
-       toolConfig.put("LADW", new Tool("Werner", ToolChargeInfo.LADDER));
+        toolConfig.put("CHNS", new Tool("Stihl", ToolChargeInfo.CHAINSAW));
+        toolConfig.put("LADW", new Tool("Werner", ToolChargeInfo.LADDER));
        toolConfig.put("JAKD", new Tool("DeWalt", ToolChargeInfo.JACKHAMMER));
        toolConfig.put("JAKR", new Tool("Ridgid", ToolChargeInfo.JACKHAMMER));
 

@@ -23,7 +23,7 @@ public class ToolManager {
      */
     public Tool getTool(String toolCode) {
         if (!toolCodeToToolMap.containsKey(toolCode)) {
-            throw new IllegalArgumentException("Invalid tool code");
+            throw new IllegalArgumentException("Invalid tool code.");
         }
 
         return toolCodeToToolMap.get(toolCode);

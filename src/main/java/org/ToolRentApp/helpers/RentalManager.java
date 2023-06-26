@@ -44,7 +44,7 @@ public class RentalManager {
         }
 
         if(rentalDayCount <= 0) {
-            throw new IllegalArgumentException("Rental day count must be greater than 0");
+            throw new IllegalArgumentException("Rental day count must be greater than 0.");
         }
 
         Tool tool = toolManager.getTool(toolCode);
