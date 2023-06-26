@@ -52,7 +52,7 @@ public class CalendarHelper {
 
         //If falls on weekend, it is observed on the closest weekday (,
         //if Sunday, then Monday after)
-        if(localDate.getDayOfMonth() == 4 && localDate.getDayOfWeek() == DayOfWeek.MONDAY) {
+        if(localDate.getDayOfMonth() == 5 && localDate.getDayOfWeek() == DayOfWeek.MONDAY) {
             return true;
         }
 
