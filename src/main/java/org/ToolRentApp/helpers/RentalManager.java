@@ -57,7 +57,7 @@ public class RentalManager {
 
         BigDecimal finalCharge = costBeforeDiscount.subtract(discount);
 
-        RentalAgreement rentalAgreement = new RentalAgreement(tool, rentalDayCount, checkoutDate, dueDate, chargeDays,
+        RentalAgreement rentalAgreement = new RentalAgreement(toolCode, tool, rentalDayCount, checkoutDate, dueDate, chargeDays,
                 costBeforeDiscount, discountPercentage, discount, finalCharge);
 
         return rentalAgreement;

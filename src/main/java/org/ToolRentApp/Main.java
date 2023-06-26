@@ -23,6 +23,8 @@ public class Main {
         //From data generate a Rental agreement
         System.out.println(tool.getBrand());
         System.out.println("additional");
+        System.out.println(tool.getToolChargeInfo().toString());
+
         //RentalAgreement agreement = new RentalAgreement();
     }
 }
